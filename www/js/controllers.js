@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('mTestApp.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -10,6 +10,15 @@ angular.module('starter.controllers', [])
   //});
 
   // Form data for the login modal
+
+  $scope.playlists = [
+    { title: 'Reggae', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 },
+    { title: 'Indie', id: 4 },
+    { title: 'Rap', id: 5 },
+    { title: 'Cowbell', id: 6 }
+  ];
   $scope.loginData = {};
 
   // Create the login modal that we will use later
@@ -43,14 +52,16 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
-    { title: 'Reggae', id: 1 },
+    { title: 'Reggae Hello', id: 1 },
     { title: 'Chill', id: 2 },
     { title: 'Dubstep', id: 3 },
     { title: 'Indie', id: 4 },
     { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { title: 'Cowbell', id: 6 },
+    { title: 'new Data', id: 7 }
   ];
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+  $scope.dynamicName=$stateParams.playlistName;
 });
